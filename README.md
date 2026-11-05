@@ -43,15 +43,16 @@ for passing yards; the second represents yards lost to sacks.
    and instructions for running your script.
 6. Shihan will review, test, and merge the pull request.
 
-## Report and configuration
+## Run the report
 
-The report source will be report/report.Rmd.
-The final report will be reports/report.html.
+Run these commands from the project folder:
 
-The default top_n value in config.yml is 10.
-Changing this value will change the number of quarterbacks
-displayed in the ranking chart.
+```bash
+Rscript -e 'renv::restore()'
+make
+```
 
-The Makefile and report are still being developed.
-Once completed, running make from the project root will generate
-the analysis outputs and HTML report.
+The report will be saved as reports/report.html.
+
+To change the number of players in the ranking chart, edit
+top_n in config.yml and run make again.
